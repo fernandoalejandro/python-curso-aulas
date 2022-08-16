@@ -31,7 +31,7 @@ def menu():    #Funcao para criar o Menu
     print('2 - Informacoes do Carro')
     print('3 - Excluir Carro')
     print('4 - Desligar Carro')
-    print('5 - Listar Carro')
+    print('5 - Listar Carros')
     print('6 - Sair')
     print('7 - Quantidade de Carros',len(carros))
     opcao=input("Digite uma opcao: ")
@@ -75,7 +75,7 @@ def ligarCarro(): #Funcao para ligar o carro
         os.system('pause')
 
 
-def ligarCarro(): #Funcao para desligar o carro
+def desligarCarro(): #Funcao para desligar o carro
     os.system('cls') or None
     n=input('Informe o numero do carro que deseja desligar: ')
     try:
@@ -93,6 +93,26 @@ def listarCarros(): #Funcao para listar o carro
         print(p,' - ',c.nome)
         p=p+1
     os.system('pause')
+
+ret=menu()
+while ret < '7':
+    if ret=='1':
+        NovoCarro()
+    elif ret=='2':
+        informacoes()
+    elif ret=='3':
+        excluirCarro()
+    elif ret=='4':
+        ligarCarro()
+    elif ret=='5':
+        desligarCarro()
+    elif ret=='6':
+        listarCarros()
+    ret=menu()
+os.system('cls') or None
+print('Programa Finalizado')
+
+
 
 
 
